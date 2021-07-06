@@ -60,6 +60,19 @@ currentWeatherEl.appendChild(windEl);
  
 }
 
+var find5Day = function(city) {
+    var key = "12d7582393a5faca0979f0f3d2c1fc1a";
+    var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + key;
+
+    fetch(url)
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        show5Day(data, city);
+    })
+}
+
 var show5Day = function(weather) {
     weekWeatherEl.textContent = "";
     weekHeaderEl.textContent = "5 Day Forecast: ";
@@ -113,19 +126,6 @@ var displayIndex = function(index) {
     uvEl.appendChild(uvAmount);
 
     currentWeatherEl.appendChild(uvEl);
-}
-
-var find5Day = function(city) {
-    var key = "12d7582393a5faca0979f0f3d2c1fc1a";
-    var url = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + key;
-
-    fetch(url)
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        show5Day(data, city);
-    })
 }
 
 formEl.addEventListener("submit", formSubmitHandler);
