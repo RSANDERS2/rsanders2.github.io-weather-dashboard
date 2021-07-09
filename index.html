@@ -9,28 +9,28 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    <header class="jumbotron">
-        <h1>Weather Dashboard</h1>
+    <header class="jumbotron text-center">
+        <h1 class="p-1">Weather Dashboard</h1>
     </header>
-    <main class="container-fluid">
+    <main class="container-fluid m-4">
         <div class="row">
           <div class="col-12">
               <form id="search-form">
                   <h3>Search for a City: </h3>
-                  <input type="text" id="city-input">
+                  <input type="text" id="city-input" class="m-2">
                   <button class="btn" type="submit">Search</button>
               </form>
               <div id="search-list"></div>
           </div>
           <div class="col-12">
               <div id="current-forecast">
-                  <h2 id="current-city"></h2>
-                  <div id="current-container"></div>
+                  <h2 id="current-city" class="mt-4"></h2>
+                  <div id="current-container" class="list-group"></div>
               </div>
           </div>
-          <div class="row" id="week-forecast">
+          <div class="row m-2" id="week-forecast">
                   <h2 class="col-12" id="forecast"></h2>
-                  <div id="week-container"></div>
+                  <div id="week-container" class="d-flex"></div>
           </div>
         </div>
       </div>
